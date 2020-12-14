@@ -16,11 +16,11 @@ public final class XmlUtility {
     private XmlUtility() {
     }
 
-    public static void readXmlFromFile(String filePath) {
+    public static Document readXmlFromFile(String filePath) {
         File fXmlFile = new File(filePath);
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder;
-        Document xmlDocument;
+        Document xmlDocument = null;
 
         try {
             dBuilder = dbFactory.newDocumentBuilder();
@@ -35,6 +35,8 @@ public final class XmlUtility {
         }
 
 
-        System.out.println();
+
+
+        return xmlDocument;
     }
 }
